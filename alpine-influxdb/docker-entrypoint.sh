@@ -1,6 +1,7 @@
 #!/bin/bash
 
-$INSTALL_PATH/influxd --config /etc/influxdb.toml & 
+/usr/bin/telegraf --config /etc/telegraf/telegraf.conf &
+influxd --config /etc/influxdb.toml & 
 
 sleep 10 
 

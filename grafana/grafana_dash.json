@@ -29,16 +29,17 @@
               "threshold2Color": "rgba(234, 112, 112, 0.22)"
             },
             "id": 1,
+            "interval": ">10s",
             "isNew": true,
             "legend": {
               "avg": false,
               "current": false,
+              "hideEmpty": false,
               "max": false,
               "min": false,
               "show": true,
               "total": false,
-              "values": false,
-              "hideEmpty": false
+              "values": false
             },
             "lines": true,
             "linewidth": 2,
@@ -60,9 +61,15 @@
                 "dsType": "influxdb",
                 "groupBy": [
                   {
-                    "type": "tag",
                     "params": [
                       "host"
+                    ],
+                    "type": "tag"
+                  },
+                  {
+                    "type": "fill",
+                    "params": [
+                      "null"
                     ]
                   }
                 ],
@@ -73,26 +80,26 @@
                 "select": [
                   [
                     {
-                      "type": "field",
                       "params": [
                         "usage_system"
-                      ]
+                      ],
+                      "type": "field"
                     }
                   ],
                   [
                     {
-                      "type": "field",
                       "params": [
                         "usage_user"
-                      ]
+                      ],
+                      "type": "field"
                     }
                   ],
                   [
                     {
-                      "type": "field",
                       "params": [
                         "usage_iowait"
-                      ]
+                      ],
+                      "type": "field"
                     }
                   ]
                 ],
@@ -128,8 +135,7 @@
                 "min": null,
                 "show": true
               }
-            ],
-            "interval": ">10s"
+            ]
           }
         ],
         "title": "Row"
